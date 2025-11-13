@@ -1,0 +1,391 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "Oswald", sans-serif;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+@font-face {
+  font-family: "responsivenav";
+  src: url("../icons/responsivenav.eot");
+  src: url("../icons/responsivenav.eot?#iefix") format("embedded-opentype"),
+    url("../icons/responsivenav.ttf") format("truetype"),
+    url("../icons/responsivenav.woff") format("woff"),
+    url("../icons/responsivenav.svg#responsivenav") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* NAV BAR AND HEADER */
+
+header {
+  background-color: #7303fc;
+  overflow: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat (2, auto);
+}
+
+header {
+  z-index: 3;
+  width: 100%;
+}
+
+h1 {
+  width: auto;
+  grid-row: 1/2;
+  grid-column: 1/2;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+h1 a {
+  color: white;
+  text-decoration: none;
+}
+
+
+
+.nav-toggle {
+  text-decoration: none;
+  text-indent: -300px;
+  position: relative;
+  overflow: hidden;
+  width: 60px;
+  height: 55px;
+  grid-row: 1/2;
+  grid-column: 2/3;
+  justify-self: flex-end;
+}
+
+.nav-toggle:before {
+  color: white; /* edit this to change the icon color */
+  font: normal 35px/55px "responsivenav"; /* edit font-size (28px) to change the icon size */
+  text-transform: none;
+  text-align: center;
+  position: absolute;
+  content: "\2261"; /* hamburger icon */
+  text-indent: 0;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.nav-toggle.active:before {
+  font-size: 30px;
+  content: "\78"; /* X/close icon */
+}
+
+.nav-collapse {
+  grid-row: 2/3;
+  grid-column: 1/3;
+}
+
+.nav-collapse ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.nav-collapse li {
+  display: block;
+}
+
+.js .nav-collapse {
+  max-height: 0;
+  position: absolute;
+  display: block;
+  overflow: hidden;
+}
+
+.nav-collapse.opened {
+  max-height: 9999px;
+}
+
+.logo {
+  text-decoration: none;
+  font-weight: bold;
+  line-height: 55px;
+  padding: 0 20px;
+  color: black;
+}
+
+.nav-collapse,
+.nav-collapse * {
+  box-sizing: border-box;
+}
+
+.nav-collapse,
+.nav-collapse ul {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.nav-collapse a {
+  text-decoration: none;
+  padding: 0.7em 1em;
+  color: white;
+  width: 100%;
+  display: block;
+}
+
+.nav-collapse ul ul a {
+  padding-left: 2em;
+}
+
+.menu-item a:hover, .menu-item a:focus {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+
+/* MAIN */
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat (2, auto);
+  margin: 10px;
+  gap: 20px;
+}
+
+/* TEXT BOX */
+
+.welcome-box {
+  display:flex;
+  flex-direction: column;
+  border: 2px solid black;
+  border-radius: 5px;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+  padding: 20px;
+  height: 200px;
+  box-shadow: 5px 5px #7303fc;
+}
+
+.welcome-para {
+  font-weight: bold;
+  margin: 0;
+  font-size: 24px;
+}
+
+h2 {
+  margin: 0;
+  font-size: 35px;
+}
+
+.learn {
+  background-color: #7303fc;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background-color 300ms linear;
+}
+
+.learnbox {
+  margin: 15px 25px;
+}
+
+.learn:hover, .learn:focus {
+  background-color: #3e32a8;
+  cursor: pointer;
+}
+
+/* FORM */
+
+.form-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 20px;
+  height: auto;
+  box-shadow: 5px 5px #7303fc;
+}
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+input {
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  width: 100%;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  transition: border 200ms;
+  background-color: #f1d9fc;
+}
+
+label {
+  margin-bottom: 8px;
+}
+
+input::placeholder {
+  color: #7303fc;
+  font-family: "Oswald", sans-serif;
+}
+
+input:hover, input:focus{
+  border: 2px solid #7303fc;
+}
+
+button {
+  text-align: center;
+  font-style: normal;
+  border-radius: 8px;
+  font-size: 18px;
+  border: none;
+  color: white;
+  font-family: "Oswald", sans-serif;
+  padding: 19px 39px 18px 39px;
+  background-image: linear-gradient(to right, orange, #7303fc, #7303fc);
+  background-size: 200%;
+  background-position: left;
+  transition: background-position 300ms;
+}
+
+button:hover, button:focus {
+  background-position: right;
+  cursor: pointer;
+}
+
+/* IMAGES */
+
+aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  gap: 20px;
+  box-shadow: 5px 5px #7303fc;
+}
+
+.image-box {
+  width: 100%;
+  height: 150px;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  animation: growReverse 300ms linear forwards;
+}
+
+img:hover, img:focus {
+  animation: grow 300ms linear forwards;
+}
+
+@keyframes grow {
+  0% {scale: 1.0}
+  100% {scale: 1.02}
+}
+
+@keyframes growReverse {
+  0% {scale: 1.02}
+  100% {scale: 1.0}
+}
+
+/* FOOTER */
+
+footer {
+  background-color:#7303fc;
+  padding: 20px;
+}
+
+footer p {
+  color: white;
+  margin: 0;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+  .nav-collapse {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+  
+  .nav-collapse ul {
+  flex-direction: row;
+  align-items: flex-end;
+}
+  
+  .nav-collapse li {
+    width: auto;
+  }
+
+  .nav-collapse a {
+    padding: 1.02em 2em;
+    text-align: center;
+    border-top: 0;
+    margin: 0;
+  }
+
+  .nav-collapse ul ul a {
+    display: none;
+  }
+
+  .nav-collapse.closed {
+    max-height: none;
+  }
+  .nav-toggle {
+    display: none;
+  }
+  
+  main {
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: 1fr;
+    margin: 10px 40px;
+  }
+
+  .welcome-box {
+    grid-column: 1/2;
+    height: auto;
+  }
+
+  .form-box {
+    grid-column: 2/3;
+    
+  }
+
+  aside {
+    flex-direction: row;
+    justify-content: center;
+    margin: 10px 40px;
+  }
+
+  .image-box {
+    max-width: 300px;
+    height: auto;
+  }
+
+  img {
+    height: 300px;
+  }
+}
